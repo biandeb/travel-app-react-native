@@ -1,12 +1,25 @@
-import { StatusBar } from 'expo-status-bar';
-import { Text, View } from 'react-native';
+// In App.js in a new project
 
-export default function App() {
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+import HomeScreen from './src/screens/HomeScreen';
+import DetailsScreen from './src/screens/DetailsScreen';
+
+
+
+const Stack = createNativeStackNavigator();
+
+function App() {
   return (
-    <View className="bg-blue-500 p-4">
-      <Text className="font-bold">Open up App.kkjs to start working on your apphh!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Details" component={DetailsScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
+export default App;
