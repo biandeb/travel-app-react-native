@@ -1,0 +1,1 @@
+export { default as TouristsImage } from './tourists.png'
